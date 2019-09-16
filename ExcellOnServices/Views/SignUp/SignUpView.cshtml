@@ -49,13 +49,14 @@
                     <div class="form-group textLeft col-md-16">
                         @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-8 textLeft", required = "required" })
                         <div class="form-group col-md-16">
-                            @Html.DropDownListFor(model => model.Role, (IEnumerable<SelectListItem>)TempData["abc"],  new { @class = "form-control selectSignUp", required = "required", placeholder = "Select"  })
+                            @Html.DropDownListFor(model => model.Role, (IEnumerable<SelectListItem>)TempData["abc"], new { @class = "form-control selectSignUp", required = "required", placeholder = "Select" })
                             @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger", required = "required" })
                         </div>
                     </div>
 
 
-                   
+
+
 
 
 
