@@ -1,0 +1,41 @@
+﻿@model ExcellOnServices.Models.DepartmentMod
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h1>Department Form</h1>
+
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Department, new { htmlAttributes = new { @class = "form-control", Required = "Required" } })
+                @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control ", Required = "Required" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-inline mx-auto search-form">
+
+            <button class="btn btn-style my-2 my-sm-0" type="submit" style="margin-left:15px">Add</button>
+        </div>
+    </div>
+}
