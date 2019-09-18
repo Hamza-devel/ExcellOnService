@@ -1,6 +1,7 @@
 ﻿using ExcellOnServices.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -29,7 +30,7 @@ namespace ExcellOnServices.Controllers
         {
 
 
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("Insert into Tbl_Employee(Employee_Id,First_Name,Last_Name,Cell_No,DOB,Address,Department,Designation,Services,DOJ) Values('" + a.Employee_Id + "','" + a.First_Name + "','" + a.Last_Name + "','" + a.Cell_No + "','" + a.DOB + "','" + a.Addrerss + "','" + a.Department + "','" + a.Designation + "','" + a.Services + "','" + a.DOJ + "')", Cn);
@@ -52,7 +53,7 @@ namespace ExcellOnServices.Controllers
 
         {
 
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
 
@@ -97,7 +98,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Edit(int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
 
@@ -139,7 +140,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Edit(EmployeeMod a, int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
 
@@ -161,7 +162,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Delete(int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("select * from Tbl_Employee where id=" + id, Cn);
@@ -196,7 +197,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Delete(EmployeeMod a, int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
 
@@ -217,7 +218,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Details(int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("select * from Tbl_Employee where id=" + id, Cn);
@@ -256,7 +257,7 @@ namespace ExcellOnServices.Controllers
 
 public void Fill_Department()
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
             SqlCommand Com = new SqlCommand("select * from Tbl_Department", Cn);
             SqlDataReader Sdr = Com.ExecuteReader();
@@ -278,7 +279,7 @@ public void Fill_Department()
 
         public void Fill_Designation()
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
             SqlCommand Com = new SqlCommand("select * from Tbl_Designation", Cn);
             SqlDataReader Sdr = Com.ExecuteReader();
@@ -303,7 +304,7 @@ public void Fill_Department()
 
         public void Fill_Services()
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
             SqlCommand Com = new SqlCommand("select * from Tbl_Services", Cn);
             SqlDataReader Sdr = Com.ExecuteReader();

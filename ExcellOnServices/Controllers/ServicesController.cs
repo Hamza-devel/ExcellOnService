@@ -1,6 +1,7 @@
 ﻿using ExcellOnServices.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -22,7 +23,7 @@ namespace ExcellOnServices.Controllers
         {
 
 
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("Insert into Tbl_Services(Services,Date) Values('" + a.Services+ "','" + a.Date + "')", Cn);
@@ -40,7 +41,7 @@ namespace ExcellOnServices.Controllers
 
         {
 
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
 
@@ -78,7 +79,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Edit(int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
 
@@ -106,7 +107,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Edit(ServicesMod a, int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
 
@@ -128,7 +129,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Delete(int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("select * from Tbl_Services where id=" + id, Cn);
@@ -156,7 +157,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Delete(ServicesMod a, int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
 
@@ -177,7 +178,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Details(int id)
 
         {
-            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("select * from Tbl_Services where id=" + id, Cn);
