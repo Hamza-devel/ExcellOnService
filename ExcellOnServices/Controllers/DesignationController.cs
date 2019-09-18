@@ -1,7 +1,6 @@
 ﻿using ExcellOnServices.Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -22,7 +21,7 @@ namespace ExcellOnServices.Controllers
         {
 
 
-SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("Insert into Tbl_Designation(Designation,Date) Values('" + a.Designation + "','" + a.Date + "')", Cn);
@@ -40,7 +39,7 @@ SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"
 
         {
 
-SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
 
@@ -78,7 +77,7 @@ SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"
         public ActionResult Edit(int id)
 
         {
-SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
 
@@ -106,7 +105,7 @@ SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"
         public ActionResult Edit(DesignationMod a, int id)
 
         {
-SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
 
@@ -128,7 +127,7 @@ SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"
         public ActionResult Delete(int id)
 
         {
-SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("select * from Tbl_Designation where id=" + id, Cn);
@@ -156,7 +155,7 @@ SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"
         public ActionResult Delete(DesignationMod a, int id)
 
         {
-SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
 
@@ -177,7 +176,7 @@ SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"
         public ActionResult Details(int id)
 
         {
-SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("select * from Tbl_Designation where id=" + id, Cn);

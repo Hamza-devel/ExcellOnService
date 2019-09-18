@@ -1,7 +1,6 @@
 ﻿using ExcellOnServices.Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -22,7 +21,7 @@ namespace ExcellOnServices.Controllers
         {
 
 
-            SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=.;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("Insert into Tbl_Role(Role,Date) Values('" + a.Role + "','" + a.Date + "')", Cn);
@@ -42,7 +41,7 @@ namespace ExcellOnServices.Controllers
 
         {
 
-            SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=.;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
 
@@ -80,7 +79,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Edit(int id)
 
         {
-            SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=.;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
 
@@ -108,7 +107,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Edit(RoleMod a, int id)
 
         {
-            SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=.;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
 
@@ -130,7 +129,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Delete(int id)
 
         {
-            SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=.;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("select * from Tbl_Role where id=" + id, Cn);
@@ -158,7 +157,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Delete(RoleMod a, int id)
 
         {
-            SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=.;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
 
@@ -179,7 +178,7 @@ namespace ExcellOnServices.Controllers
         public ActionResult Details(int id)
 
         {
-            SqlConnection Cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString);
+            SqlConnection Cn = new SqlConnection("Server=.;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
 
             SqlCommand Com = new SqlCommand("select * from Tbl_Role where id=" + id, Cn);
