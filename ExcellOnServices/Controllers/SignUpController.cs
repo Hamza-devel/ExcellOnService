@@ -43,7 +43,7 @@ namespace ExcellOnServices.Controllers
 
         public void Fill_Role()
         {
-            SqlConnection Cn = new SqlConnection("Server=.;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
+            SqlConnection Cn = new SqlConnection("Server=HAMZA-LAPTOP;User=sa;Password=aptech;initial Catalog=ExcellOnServices");
             Cn.Open();
             SqlCommand Com = new SqlCommand("select * from Tbl_Role", Cn);
             SqlDataReader Sdr = Com.ExecuteReader();

@@ -179,6 +179,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
@@ -188,6 +189,7 @@
     </Compile>
     <Compile Include="Models\DepartmentMod.cs" />
     <Compile Include="Models\DesignationMod.cs" />
+    <Compile Include="Models\EmployeeMod.cs" />
     <Compile Include="Models\LoginMod.cs" />
     <Compile Include="Models\RoleMod.cs" />
     <Compile Include="Models\ServicesMod.cs" />
@@ -219,6 +221,18 @@
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Login\LoginView.cshtml" />
+    <Content Include="Views\Login\Dashboard.cshtml" />
+    <Content Include="Views\Designation\Show.cshtml" />
+    <Content Include="Views\Designation\Edit.cshtml" />
+    <Content Include="Views\Designation\Delete.cshtml" />
+    <Content Include="Views\Designation\Details.cshtml" />
+    <Content Include="Views\Services\Show.cshtml" />
+    <Content Include="Views\Services\Edit.cshtml" />
+    <Content Include="Views\Services\Delete.cshtml" />
+    <Content Include="Views\Services\Details.cshtml" />
+    <Content Include="Views\Employee\EmployeeView.cshtml" />
+    <Content Include="Views\Employee\Show.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,7 +242,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

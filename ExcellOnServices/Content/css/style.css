@@ -2211,3 +2211,11 @@ ul.percentg-circles-w3ls .chart .figure {
     width: 100% !important;
     height: 44px !important;
 }
+.haveAccount {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 63%;
+    margin-right: auto;
+    margin-left: auto;
+}
